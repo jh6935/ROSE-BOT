@@ -310,6 +310,6 @@ if __name__ == "__main__":
     # 객체를 생성
     client = chatbot()
     # TOKEN 값을 통해 로그인하고 봇을 실행
-    client.run("OTYxMjUzMzIzNTM1Njg3NzAw.Yk2S6w.7lSbEqpgQkxT1IKdtB-HJnSf3UQ")
+    client.run("")
 
 #봇 코드 마지막 줄입니다. 여기까지가 코드입니다. (총 296줄)
