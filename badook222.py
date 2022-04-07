@@ -301,7 +301,7 @@ if __name__ == "__main__":
     # 객체를 생성
     client = chatbot()
     # TOKEN 값을 통해 로그인하고 봇을 실행
-    access_token = os.environ["BOT_TOKEN"]
+    access_token = os.environ[BOT_TOKEN]
     client.run(access_token)
 
 #봇 코드 마지막 줄입니다. 여기까지가 코드입니다. (총 296줄)
