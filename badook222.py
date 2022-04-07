@@ -1,4 +1,5 @@
 import discord
+import os
 #본 봇은 대화 봇입니다.
 #바둑이 봇이며, 맨 아래 bot.run ()부분에 봇 토큰을 넣으세요.
 #코드를 2차 배포는 깃허브 링크만 가능합니다.
@@ -287,16 +288,6 @@ class chatbot(discord.Client):
 
 
 
-##여기부터 검열기능
-        @bot.event
-async def on_message(message): # 메세지가 채널에 올라왔을 때 (해당 매세지)
-    message_content = message.content # 메세지 내용을 message_content라는 변수에 담고
-    bad = message_content.find("바둑아") # 메세지 내용 중 바둑아이란 단어가 있다면 0 이상을 반환
-    print(bad)
-    if bad >= 0:
-        await message.delete() # 욕설이 담긴 메세지를 삭제합니다.
-    await bot.process_commands(message) # 메세지 중 명령어가 있을 경우 처리해주는 코드
-
 
 
 
@@ -310,6 +301,7 @@ if __name__ == "__main__":
     # 객체를 생성
     client = chatbot()
     # TOKEN 값을 통해 로그인하고 봇을 실행
-    client.run("")
+    access_token = os.environ["BOT_TOKEN"]
+    client.run(access_token)
 
 #봇 코드 마지막 줄입니다. 여기까지가 코드입니다. (총 296줄)
